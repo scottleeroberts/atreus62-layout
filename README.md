@@ -11,3 +11,4 @@ $ unplug and replug the keyboard
 $ push the reset button on the keyboard
 $ `sudo su`
 $ 'avrdude -v -p atmega32u4 -c avr109 -U flash:w:atreus62_default.hex -P /dev/ttyACM0'
+$ NOTE: Hold down reset for 10s to ensure the keyboard is in bootloader mode
