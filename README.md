@@ -9,4 +9,5 @@ $ ./util/docker_build.sh atreus62:scottleeroberts
 # Flash the firmware
 $ unplug and replug the keyboard
 $ push the reset button on the keyboard
+$ `sudo su`
 $ 'avrdude -v -p atmega32u4 -c avr109 -U flash:w:atreus62_default.hex -P /dev/ttyACM0'
