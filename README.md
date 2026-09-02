@@ -4,12 +4,14 @@ Custom QMK firmware for the Atreus62 with home-row modifiers and tmux integratio
 
 Companion to the [ergodox](https://github.com/scottleeroberts/ergodox) repo — both
 boards share the same layer structure, the same home-row mods, the same tmux macros,
-and build against the same pinned QMK tree.
+and build against the same pinned QMK tree. The bottom row is the one place they
+deliberately differ; see [Differences](#differences-from-the-ergodox-repo).
 
 ## Features
 
 - **Home-row modifiers**: Alt, Cmd, Ctrl, Shift on home row (ASDF / JKL;)
 - **4 layers**: Base (QWERTY), Symbols, Tmux shortcuts, Numbers
+- **Doubled thumb keys**: Enter and Space each appear twice on the bottom row
 - **Tmux integration**: Custom macros for window management (Ctrl+Space prefix)
 - **Chordal Hold + Flow Tap**: Anti-misfire for home-row mods
 - **Modern QMK**: Updated for latest QMK firmware (Feb 2026)
@@ -49,11 +51,13 @@ Current firmware size: **21826/28672 bytes (76%, 6846 free)**.
 |-----+-----+-----+-----+-----+-----|              |-----+-----+-----+-----+-----+-----|
 | Sft |  Z  |  X  |  C  |  V  |  B  |              |  N  |  M  |  ,  |  .  |  /  |  =  |
 |-----+-----+-----+-----+-----+-----|  ,-----.     |-----+-----+-----+-----+-----+-----|
-|     |     |     |     | Cmd | Num |  |Entr |Spc| | Sym | Tab |     |     |     |     |
+|     |     |     | Cmd | Num |Entr |  |Entr |Spc| | Spc | Sym | Tab |     |     |     |
 `-----------------------------------'  `-----'     `-----------------------------------'
 ```
 
-The two center keys are the thumb keys: **Enter** (left) and **Space** (right).
+The two center keys are the big 1.5u thumb keys: **Enter** (left) and **Space**
+(right). Each is doubled by the ordinary key immediately beside it, so Enter and
+Space are both reachable either with the thumb or with the adjacent finger.
 
 ### SYMB (Layer 1) - Symbols & Navigation
 
@@ -88,14 +92,14 @@ never trips Chordal Hold.
     7  8  9    Mute
     4  5  6    Vol+
     1  2  3    Vol-
- 0
 ```
+
+**Bottom row:** Tab and `0`, sitting under the `7`/`4`/`1` and `8`/`5`/`2` columns.
 
 **Top left:** Reset/Bootloader (`QK_BOOT`)
 
 The Atreus62 has no RGB or backlight hardware, so the left half of this layer is
-otherwise unused — this is the one place the layout intentionally diverges from the
-ergodox, whose left half holds RGB controls.
+otherwise unused, where the ergodox holds RGB controls.
 
 ## Configuration Details
 
@@ -122,7 +126,8 @@ two thumb keys as `L`/`R` respectively. No manual `chordal_hold_layout` is neede
 
 ## Differences from the ergodox repo
 
-Both boards run the same layout. Where they differ, it's hardware:
+The alphas, home-row mods and layer keys match. The differences are hardware, plus
+one deliberate layout change to the bottom row:
 
 | | Atreus62 | Ergodox EZ |
 |---|---|---|
@@ -131,6 +136,7 @@ Both boards run the same layout. Where they differ, it's hardware:
 | Flash budget | 28672 bytes | 32256 bytes |
 | RGB | none | underglow on Shine |
 | Combos | none | J+H, K+J, D+F |
+| Bottom row | Cmd/Num and Sym/Tab shifted outward; Enter and Space doubled | single Enter, single Space |
 
 ## License
 
