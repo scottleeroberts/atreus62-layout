@@ -92,9 +92,10 @@ never trips Chordal Hold.
     7  8  9    Mute
     4  5  6    Vol+
     1  2  3    Vol-
+Tab 0
 ```
 
-**Bottom row:** Tab and `0`, sitting under the `7`/`4`/`1` and `8`/`5`/`2` columns.
+`0` sits directly under the `7`/`4`/`1` column, with Tab one key further left.
 
 **Top left:** Reset/Bootloader (`QK_BOOT`)
 
